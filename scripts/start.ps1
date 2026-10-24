@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Windows 一键启动 dsh-mobile-relay
 

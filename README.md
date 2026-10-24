@@ -102,6 +102,23 @@ npm start
 
 ---
 
+## 不在同一个局域网？
+
+中继默认监听 `0.0.0.0:3443`，所以只要手机能路由到电脑的某个 IP 就能用。最省事、也最安全的是组一台虚拟局域网：
+
+**Tailscale（推荐，免费、不开公网端口）**
+
+1. 电脑和手机都装 [Tailscale](https://tailscale.com/download) 并登录同一账号；
+2. 电脑上 `tailscale ip -4` 拿到 `100.x.y.z`；
+3. 重启本项目，控制台会把这个地址也列出来（或直接用 `https://100.x.y.z:3443` 重新配对）；
+4. 手机在任何网络下（4G / 公司 Wi-Fi）都能连回电脑。
+
+> 同类方案：ZeroTier、蒲公英、WireGuard 自建。原理相同——给电脑一个手机可达的稳定 IP。
+
+**不建议**直接把 3443 端口映射到公网：能连上中继就等于能在你电脑上执行命令。确需公网访问，请配 `publicHostnames` + 真实证书，并把 `privilegedMethods` 设为 `loopback-only`（详见 `docs/ARCHITECTURE.md`）。
+
+---
+
 ## 常见问题
 
 **手机提示「无法连接 …」**
@@ -147,6 +164,18 @@ docs/
 ```
 
 ---
+
+## 发布 / 镜像
+
+仓库自带 `scripts/publish-gitee.ps1`，一条命令完成「建仓 → 推送 → 写描述 → 改公开」：
+
+```powershell
+$env:GITEE_TOKEN = "你的私人令牌"
+.\scripts\publish-gitee.ps1 -Name dsh-mobile-relay -Description "一键把 DSH 接到手机" -Public
+```
+
+> 令牌在 https://gitee.com/profile/personal_access_tokens 生成，勾选 **projects** 权限；脚本只在内存里用一次。
+> Gitee 对刚推送的仓库有元数据延迟，脚本会自动重试把仓库改为公开。
 
 ## 致谢
 
