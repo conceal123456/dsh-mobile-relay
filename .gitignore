@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# 运行时产物（含配对码，别提交）
+pairing.json
+pairing-qr.png
+*.log
+.env

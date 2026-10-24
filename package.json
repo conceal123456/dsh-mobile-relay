@@ -1,0 +1,37 @@
+{
+  "name": "dsh-mobile-relay",
+  "version": "1.0.0",
+  "private": false,
+  "description": "把电脑上的 DeepSeek Harness 安全地接到手机上的 DSH Mobile —— 中继 + harness 鉴权桥一键部署",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "bin": {
+    "dsh-mobile-relay": "src/relay.mjs"
+  },
+  "scripts": {
+    "start": "node src/relay.mjs",
+    "pair": "node src/relay.mjs --print-pairing"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "deepseek-harness",
+    "relay",
+    "android",
+    "mobile"
+  ],
+  "dependencies": {
+    "dsh-relay": "^0.2.1",
+    "qrcode": "^1.5.4"
+  }
+}
