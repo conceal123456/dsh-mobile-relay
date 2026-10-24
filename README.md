@@ -44,7 +44,7 @@ dsh-relay 中继  ────────────────►  鉴权桥
 ### 1. 拉取 & 安装
 
 ```bash
-git clone https://github.com/<your-name>/dsh-mobile-relay.git
+git clone https://github.com/conceal123456/dsh-mobile-relay.git
 cd dsh-mobile-relay
 npm install
 ```

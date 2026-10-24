@@ -5,6 +5,14 @@
   "description": "把电脑上的 DeepSeek Harness 安全地接到手机上的 DSH Mobile —— 中继 + harness 鉴权桥一键部署",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conceal123456/dsh-mobile-relay.git"
+  },
+  "bugs": {
+    "url": "https://github.com/conceal123456/dsh-mobile-relay/issues"
+  },
+  "homepage": "https://github.com/conceal123456/dsh-mobile-relay#readme",
   "engines": {
     "node": ">=18.17"
   },
